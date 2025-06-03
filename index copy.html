@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Email Signature</title>
+    <style type="text/css">
+      body {
+        margin: 0;
+      }
+      table {
+        border-spacing: 0;
+      }
+      td {
+        padding: 0;
+      }
+      img {
+        border: 0;
+      }
+      .wrapper {
+        width: 100%;
+        table-layout: fixed;
+      }
+      .main {
+        width: 100%;
+        background-color: #fff;
+        font-family: "Lato", Arial, Helvetica, sans-serif;
+        color: #282828;
+        text-align: left;
+      }
+      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+    </style>
+  </head>
+  <body>
+    <center class="wrapper">
+      <table class="main" width="100%">
+        <!-- PROFILE IMAGE -->
+        {#
+        <tr>
+          <td style="padding: 20px 0 8px 10px">
+            <img
+              src="/img/profile-img.jpg"
+              alt="FKP Profile Picture"
+              width="150px"
+              style="
+                display: block;
+                outline: none;
+                border: 0;
+                border-radius: 5px;
+              "
+            />
+          </td>
+        </tr>
+        #}
+        <!-- NAME -->
+        <tr>
+          <td
+            style="
+              font-size: 22px;
+              line-height: 24px;
+              font-size: 700;
+              padding: 5px 0 0 12px;
+              text-align: left;
+            "
+          >
+            Suzy Bryant
+          </td>
+        </tr>
+        <!-- TITLE -->
+        <tr>
+          <td
+            style="
+              font-size: 16px;
+              line-height: 18px;
+              font-weight: 400;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              padding: 10px 0 0 12px;
+              text-align: left;
+            "
+          >
+            Marketing Manager
+          </td>
+        </tr>
+        <!-- EMAIL -->
+        <tr>
+          <td style="padding: 0">
+            <table width="100%">
+              <tr>
+                <td style="padding: 8px 0 0 10px">
+                  <a href="mailto:hello@graeme.dk"
+                    ><img
+                      src="/img/mail.png"
+                      alt="Email Me"
+                      width="22px"
+                      style="border: 0"
+                    /> </a
+                  ><a
+                    href="mailto:hello@graeme.dk"
+                    style="
+                      text-decoration: none;
+                      color: #282828;
+                      font-size: 16px;
+                    "
+                  >
+                    hello@graeme.dk
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- PHONE -->
+        <tr>
+          <td style="padding: 0">
+            <table width="100%">
+              <tr>
+                <td style="padding: 8px 0 0 10px">
+                  <a href="tel:1-800-888-888">
+                    <img
+                      src="/img/phone.png"
+                      alt="Call Me"
+                      width="22px"
+                      style="border: 0"
+                    />
+                  </a>
+                  <a
+                    href="tel:1-800-888-888"
+                    style="
+                      text-decoration: none;
+                      color: #282828;
+                      font-size: 16px;
+                    "
+                  >
+                    hello@graeme.dk
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- WEBSITE -->
+        <tr>
+          <td style="padding: 0">
+            <table width="100%">
+              <tr>
+                <td style="padding: 8px 0 0 10px">
+                  <a href="https://graeme.dk">
+                    <img
+                      src="/img/globe.png"
+                      alt="Website"
+                      width="22px"
+                      style="border: 0"
+                    />
+                  </a>
+                  <a
+                    href="https://graeme.dk"
+                    style="
+                      text-decoration: none;
+                      color: #282828;
+                      font-size: 16px;
+                    "
+                  >
+                    www.graeme.dk
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- SOCIAL MEDIA -->
+        <tr>
+          <td style="padding: 0">
+            <table width="100%">
+              <tr>
+                <td style="padding: 14px">
+                  <a href="#">
+                    <img
+                      src="img/linkedin.png"
+                      alt="LinkedIn"
+                      width="30px"
+                      style="border: 0"
+                    />
+                  </a>
+                  <a href="#">
+                    <img
+                      src="img/twitterx.png"
+                      alt="Twitter"
+                      width="30px"
+                      style="border: 0"
+                    />
+                  </a>
+                  <a href="#">
+                    <img
+                      src="img/youtube.png"
+                      alt="YouTube"
+                      width="30px"
+                      style="border: 0"
+                    />
+                  </a>
+                  <a href="#">
+                    <img
+                      src="img/facebook.png"
+                      alt="Facebook"
+                      width="30px"
+                      style="border: 0"
+                    />
+                  </a>
+                  <a href="#">
+                    <img
+                      src="img/instagram.png"
+                      alt="Instagram"
+                      width="30px"
+                      style="border: 0"
+                    />
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- End Main Class -->
+    </center>
+    <!-- End Wrapper -->
+  </body>
+</html>
