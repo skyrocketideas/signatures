@@ -1,260 +1,145 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML Email Signature</title>
-    <style type="text/css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Email Signatures with Base64 Images</title>
+    <style>
       body {
-        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        padding: 2rem;
       }
-      table {
-        border-spacing: 0;
+      .signature {
+        display: flex;
+        gap: 1rem;
+        background: #fff;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        border-left: 4px solid #004080;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        align-items: center;
+        max-width: 600px;
       }
-      td {
-        padding: 0;
+      .logo img {
+        max-height: 40px;
       }
-      img {
-        border: 0;
+      .info {
+        flex-grow: 1;
       }
-      .wrapper {
-        width: 100%;
-        table-layout: fixed;
+      .name {
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-bottom: 0.2rem;
       }
-      .main {
-        width: 100%;
-        background-color: #fff;
-        font-family: "Lato", Arial, Helvetica, sans-serif;
-        color: #282828;
-        text-align: left;
+      .title {
+        color: #555;
+        margin-bottom: 0.2rem;
       }
-      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+      .company {
+        font-weight: bold;
+        color: #004080;
+        margin-bottom: 0.5rem;
+      }
+      .contact {
+        margin-bottom: 0.2rem;
+      }
+      .socials {
+        margin-top: 0.3rem;
+        margin-bottom: 0.2rem;
+      }
+      .socials a {
+        margin-right: 0.5rem;
+        display: inline-block;
+      }
+      .socials img {
+        height: 20px;
+        vertical-align: middle;
+      }
+      a {
+        color: #004080;
+        text-decoration: none;
+      }
     </style>
   </head>
   <body>
-    <center class="wrapper">
-      <table class="main" width="100%">
-        <!-- PROFILE IMAGE -->
-        <!-- NAME -->
-        <tr>
-          <td
-            style="
-              font-size: 12px;
-              line-height: 14px;
-              font-size: 700;
-              font-weight: 700;
-              text-align: left;
-            "
-          >
-            Suzy Bryant
-          </td>
-        </tr>
-        <!-- TITLE -->
-        <tr>
-          <td
-            style="
-              font-size: 10px;
-              line-height: 22px;
-              text-transform: uppercase;
-              letter-spacing: 1px;
-              text-align: left;
-            "
-          >
-            Marketing Manager
-          </td>
-        </tr>
-        <!-- COMPANY -->
-        <tr>
-          <td
-            style="
-              font-size: 10px;
-              line-height: 10px;
-              font-weight: 400;
-              text-transform: uppercase;
-              letter-spacing: 1px;
-              text-align: left;
-            "
-          >
-            FKP Scorpio Entertainment Ltd
-          </td>
-        </tr>
-        <!-- EMAIL -->
-        <tr>
-          <td style="padding: 0">
-            <table width="100%">
-              <tr>
-                <td style="padding: 4px 0 0 0">
-                  <a href="mailto:suzy.bryant@fkpscorpio.co.uk"
-                    ><img
-                      src="/img/mail.png"
-                      alt="Email Me"
-                      width="16 px"
-                      style="border: 0; padding: 0 4px 0 0" /></a
-                  ><a
-                    href="mailto:suzy.bryant@fkpscorpio.co.uk"
-                    style="
-                      text-decoration: none;
-                      color: #282828;
-                      font-size: 12px;
-                    "
-                    >suzy.bryant@fkpscorpio.co.uk
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <!-- WEBSITE -->
-        <tr>
-          <td style="padding: 0">
-            <table width="100%">
-              <tr>
-                <td style="">
-                  <a href="https://fkpscorpioent.com/en">
-                    <img
-                      src="/img/globe.png"
-                      alt="Website"
-                      width="16px"
-                      style="border: 0; padding: 0 4px 0 0" /></a
-                  ><a
-                    href="https://fkpscorpioent.com/en"
-                    style="
-                      text-decoration: none;
-                      color: #282828;
-                      font-size: 12px;
-                    "
-                    >fkpscorpioent.com/en
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <!-- COMPANY LOGO -->
-        <tr>
-          <td>
-            <table
-              style="width: 100%; max-width: 100px; margin: 0; text-align: left"
-            >
-              <tr style="border: 0">
-                <td style="padding: 8px 4px 4px 0">
-                  <a href="https://fkpscorpioent.com/en">
-                    <img
-                      src="img/fkp_black.png"
-                      alt="FKP Scorpio Entertainment Logo"
-                      width="100px"
-                      style="border: 0"
-                  /></a>
-                </td>
-                <td style="padding: 8px 4px 4px 0">
-                  <a href="https://fkpscorpioent.com/en">
-                    <img
-                      src="img/event_titanic.png"
-                      alt="FKP Scorpio Entertainment Logo"
-                      width="100px"
-                      style="border: 0"
-                  /></a>
-                </td>
-                <td style="padding: 8px 4px 4px 0">
-                  <a href="https://fkpscorpioent.com/en">
-                    <img
-                      src="img/event_tutankhamun.png"
-                      alt="FKP Scorpio Entertainment Logo"
-                      width="100px"
-                      style="border: 0"
-                  /></a>
-                </td>
-                <td style="padding: 8px 4px 4px 0">
-                  <a href="https://fkpscorpioent.com/en">
-                    <img
-                      src="img/event_tutankhamun.png"
-                      alt="FKP Scorpio Entertainment Logo"
-                      width="100px"
-                      style="border: 0"
-                  /></a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <!-- SOCIAL MEDIA -->
-        <tr>
-          <td style="padding: 0">
-            <table width="100%">
-              <tr>
-                <td style="padding: 4px 0 4px 0">
-                  <a
-                    href="https://www.linkedin.com/company/fkp-scorpio-entertainment-ltd/"
-                  >
-                    <img
-                      src="img/linkedin.png"
-                      alt="LinkedIn"
-                      width="25px"
-                      style="border: 0; padding: 0px 2px 0px 0" /></a
-                  ><a href="#"
-                    ><img
-                      src="img/twitterx.png"
-                      alt="Twitter"
-                      width="25px"
-                      style="border: 0; padding: 0px 2px 0px 2px" /></a
-                  ><a href="www.youtube.com/@FKPScorpioEntertainment"
-                    ><img
-                      src="img/youtube.png"
-                      alt="YouTube"
-                      width="25px"
-                      style="border: 0; padding: 0px 2px 0px 2px" /></a
-                  ><a href="https://www.facebook.com/fkpscorpioent/"
-                    ><img
-                      src="img/facebook.png"
-                      alt="Facebook"
-                      width="25px"
-                      style="border: 0; padding: 0px 2px 0px 2px" /></a
-                  ><a href="https://www.instagram.com/fkpscorpioent/"
-                    ><img
-                      src="img/instagram.png"
-                      alt="Instagram"
-                      width="25px"
-                      style="border: 0; padding: 0px 2px 0px 2px"
-                    />
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-        <!-- LEGAL -->
+    <h1>Email Signatures</h1>
+    <div id="signatures">Loading...</div>
 
-        <td>
-          <table
-            style="max-width: 400px; width: 100%; margin: 0; text-align: left"
-          >
-            <tr>
-              <td
-                style="
-                  text-align: left;
-                  font-size: 10px;
-                  line-height: 10px;
-                  font-weight: 400;
-                  text-align: left;
-                "
-              >
-                This email is sent on behalf of FKP Scorpio Entertainment Ltd.
-                and its associated companies and is strictly confidential and
-                intended solely for the addressee(s). If you are not the
-                intended recipient of this email you must not disclose, copy or
-                distribute its contents to any other person nor use its contents
-                in any way and must delete it from your system. FKP Scorpio
-                Entertainment Ltd. Registered in England no. 11404194 –
-                Registered Office(s): c/o 61 Billy Lows Lane, Potters Bar, Herts
-                EN6 1UX
-              </td>
-            </tr>
-          </table>
-        </td>
-      </table>
-      <!-- End Main Class -->
-    </center>
-    <!-- End Wrapper -->
+    <!-- Load images.js first -->
+    <script src="images.js"></script>
+
+    <script>
+      // Company-wide social media links/icons (icon keys match images.js keys)
+      const companySocials = [
+        {
+          url: "https://www.linkedin.com/company/awesome-company",
+          icon: "linkedin",
+          alt: "LinkedIn",
+        },
+        {
+          url: "https://twitter.com/awesomecompany",
+          icon: "twitter",
+          alt: "Twitter",
+        },
+        {
+          url: "https://facebook.com/awesomecompany",
+          icon: "facebook",
+          alt: "Facebook",
+        },
+        {
+          url: "https://instagram.com/awesomecompany",
+          icon: "instagram",
+          alt: "Instagram",
+        },
+        {
+          url: "https://instagram.com/awesomecompany",
+          icon: "youtube",
+          alt: "Youtube",
+        },
+      ];
+
+      fetch("staff.json")
+        .then((res) => res.json())
+        .then((staffList) => {
+          const container = document.getElementById("signatures");
+          container.innerHTML = "";
+
+          staffList.forEach((person) => {
+            // Build company social icons HTML (same for all)
+            const socialsHTML = companySocials
+              .map(
+                (s) =>
+                  `<a href="${s.url}" target="_blank" rel="noopener noreferrer">
+              <img src="${images[s.icon]}" alt="${s.alt}" />
+            </a>`
+              )
+              .join("");
+
+            const signature = `
+            <div class="signature">
+              <div class="info">               
+                <div class="name">${person.name}</div>
+                <div class="title">${person.title}</div>
+                <div class="company">FKP Scorpio Entertainment Ltd</div>
+                  <div class="contact">✉️ <a href="mailto:${person.email}">${person.email}</a></div>        
+                <div class="contact">📞 ${person.phone}</div>
+                <div class="logo">
+                  <img src="${images.logo}" alt="Company Logo" />
+                </div>
+                <div class="socials">${socialsHTML}</div>
+              </div>
+            </div>
+          `;
+
+            container.innerHTML += signature;
+          });
+        })
+        .catch((err) => {
+          console.error(err);
+          document.getElementById("signatures").innerText =
+            "Failed to load staff data.";
+        });
+    </script>
   </body>
 </html>
