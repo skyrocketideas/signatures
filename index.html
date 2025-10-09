@@ -39,7 +39,7 @@
       .company {
         font-weight: bold;
         color: #004080;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.2rem;
       }
       .contact {
         margin-bottom: 0.2rem;
@@ -55,6 +55,10 @@
       .socials img {
         height: 20px;
         vertical-align: middle;
+      }
+      .strapline {
+        font-size: 0.8rem;
+        font-style: italic;
       }
       a {
         color: #004080;
@@ -122,7 +126,8 @@
                 <div class="name">${person.name}</div>
                 <div class="title">${person.title}</div>
                 <div class="company">FKP Scorpio Entertainment Ltd</div>
-                  <div class="contact">✉️ <a href="mailto:${person.email}">${person.email}</a></div>        
+                <div class="strapline">Bringing People Together Through Immersive Events</>
+                <div class="contact">✉️ <a href="mailto:${person.email}">${person.email}</a></div>        
                 <div class="contact">📞 ${person.phone}</div>
                 <div class="logo">
                   <img src="${images.logo}" alt="Company Logo" />
