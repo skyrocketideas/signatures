@@ -23,7 +23,8 @@
         max-width: 600px;
       }
       .logo img {
-        max-height: 40px;
+        max-height: 50px;
+        margin-top: 0rem;
       }
       .info {
         flex-grow: 1;
@@ -42,13 +43,18 @@
         margin-bottom: 0.2rem;
       }
       .contact {
-        margin-bottom: 0.2rem;
+        margin-bottom: 0rem;
+      }
+      .partners img {
+        height: 45px;
+        vertical-align: middle;
       }
       .socials {
         margin-top: 0.3rem;
         margin-bottom: 0.2rem;
       }
       .socials a {
+        margin-left: 0;
         margin-right: 0.5rem;
         display: inline-block;
       }
@@ -58,6 +64,7 @@
       }
       .strapline {
         font-style: italic;
+        margin-bottom: 0.2rem;
       }
       a {
         color: #004080;
@@ -102,6 +109,14 @@
         },
       ];
 
+      // Company partner logos
+      const companyPartners = [
+        { url: "https://partner1.com", icon: "partner1", alt: "Partner 1" },
+        { url: "https://partner2.com", icon: "partner2", alt: "Partner 2" },
+        { url: "https://partner3.com", icon: "partner3", alt: "Partner 3" },
+        { url: "https://partner4.com", icon: "partner4", alt: "Partner 4" },
+      ];
+
       fetch("staff.json")
         .then((res) => res.json())
         .then((staffList) => {
@@ -119,22 +134,43 @@
               )
               .join("");
 
+            // Build partners HTML
+            const partnersHTML = companyPartners
+              .map(
+                (p) =>
+                  `<a href="${p.url}" target="_blank" rel="noopener noreferrer">
+                    <img src="${images[p.icon]}" alt="${p.alt}" />
+                  </a>`
+              )
+              .join("");
+
             const signature = `
             <div class="signature">
-              <div class="info">               
+              <div class="info">         
                 <div class="name">${person.name}</div>
                 <div class="title">${person.title}</div>
-                <div class="company">FKP Scorpio Entertainment Ltd</div>
-                <div class="strapline">Bringing People Together Through Immersive Events</div>
-                <div class="contact"><strong>E: </strong><a href="mailto:${person.email}">${person.email}</a></div>        
+                                <div class="company">FKP Scorpio Entertainment Ltd</div>    
+               <div class="contact"><strong>E: </strong><a href="mailto:${person.email}">${person.email}</a></div>        
                 <div class="contact"><strong>M: </strong>${person.phone}</div>
+                <div class="contact"><strong>W: </strong><a href="https://fkpscorpioentertainment.com/">fkpscorpioentertainment.com</div>  
+              <div style="margin-top: 10px;">
+                <table width="350" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td style="border-top:1px solid #ccc; height:1px; line-height:1px;">&nbsp;</td>
+                  </tr>
+                </table>
+              </div>
                 <div class="logo">
-                  <img src="${images.logo}" alt="Company Logo" />
-                </div>
-                <div class="logo">
-                  <img src="${images.logo_2}" alt="Company Logo" />
-                </div>
-                <div class="socials">${socialsHTML}</div>
+                  <img src="${images.logo_with_strapline}" alt="FKP Scorpio Entertainment Logo" />
+                </div>                       
+                 <div style="margin-bottom: 10px;">
+                <table width="350" cellpadding="0" cellspacing="0" border="0">
+                  <tr>
+                    <td style="border-top:1px solid #ccc; height:1px; line-height:1px;">&nbsp;</td>
+                  </tr>
+                </table>
+              </div>
+                <div class="partners">${partnersHTML}</div>
               </div>
             </div>
           `;
