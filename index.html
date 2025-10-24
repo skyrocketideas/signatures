@@ -36,6 +36,7 @@
       }
       .title {
         margin-bottom: 0.2rem;
+        margin-top: 0.1rem;
         text-transform: uppercase;
         letter-spacing: 0.1rem;
       }
@@ -170,10 +171,9 @@
             const signature = `
             <div class="signature">
               <div class="info">         
-                <div class="name">${person.name}</div>
-                <div class="pronouns">${person.pronouns}</div>
+                <div><span class="name">${person.name} </span><span class="pronouns">(${person.pronouns})</span></div>
                 <div class="title">${person.title}</div>
-                                <div class="company">FKP Scorpio Entertainment Ltd</div>    
+                <div class="company">FKP Scorpio Entertainment Ltd</div>    
                <div class="contact"><strong>E: </strong><a href="mailto:${person.email}">${person.email}</a></div>        
                 <div class="contact"><strong>M: </strong>${person.phone}</div>
                 <div class="contact"><strong>W: </strong><a href="https://fkpscorpioentertainment.com/">fkpscorpioentertainment.com</div>  
