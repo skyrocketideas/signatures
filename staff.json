@@ -1,23 +1,9 @@
 [
-   {
-    "name": "James Cassidy",
-    "pronouns": "he/him",
-    "title": "President",
-    "phone": "xxxxxx",
-    "email": "james.cassidy@fkpscorpio.co.uk"
-  }, 
   {
-    "name": "Suzy Bryant",
-    "pronouns": "she/her",
-    "title": "Marketing Manager",
+    "name": "Barry Campbell",
+    "title": "Special Projects Director & Senior Promoter",
     "phone": "xxxxxx",
-    "email": "suzy.bryant@fkpscorpio.co.uk"
-  },
-  {
-    "name": "Neeshat Wadhud",
-    "pronouns": "she/her",
-    "title": "Head Of Marketing",
-    "phone": "xxxxxx",
-    "email": "neeshat.wadhud@fkpscorpio.co.uk"
+    "email": "barry.campbell@fkpscorpio.co.uk"
   }
+
 ]

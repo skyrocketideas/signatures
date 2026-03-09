@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Email Signatures</title>
+    <title>Email Signatures Updated</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -32,11 +32,13 @@
       .name {
         font-size: 1.1rem;
         font-weight: bold;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.1rem;
       }
       .title {
-        color: #555;
         margin-bottom: 0.2rem;
+        margin-top: 0.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
       }
       .company {
         font-weight: bold;
@@ -46,8 +48,13 @@
         margin-bottom: 0rem;
       }
       .partners img {
-        height: 45px;
+        height: 65px;
         vertical-align: middle;
+      }
+      .pronouns {
+        color: #555;
+        margin-bottom: 0.2rem;
+        font-style: italic;
       }
       .socials {
         margin-top: 0.3rem;
@@ -110,11 +117,43 @@
       ];
 
       // Company partner logos
+
       const companyPartners = [
-        { url: "https://partner1.com", icon: "partner1", alt: "Partner 1" },
-        { url: "https://partner2.com", icon: "partner2", alt: "Partner 2" },
-        { url: "https://partner3.com", icon: "partner3", alt: "Partner 3" },
-        { url: "https://partner4.com", icon: "partner4", alt: "Partner 4" },
+        {
+          url: "https://fkpscorpioentertainment.com/events/detail/vikings-the-immersive-experience/",
+          icon: "partner2_sq",
+          alt: "Vikings The Immersive Experience",
+        },
+        {
+          url: "https://fkpscorpioentertainment.com/events/detail/cleopatra-the-experience/",
+          icon: "partner3_sq",
+          alt: "Cleopatra The Experience",
+        },
+        {
+          url: "https://fkpscorpioentertainment.com/events/detail/the-last-days-of-pompeii-the-immersive-exhibition/",
+          icon: "partner1_sq",
+          alt: "The Last Days of Pompeii",
+        },
+        {
+          url: "https://tutankhamunexperience.com/",
+          icon: "partner7_sq",
+          alt: "Tutankhamun The Immersive Exhibtion",
+        },
+        {
+          url: "https://www.minecraftexperience.com/denmark/",
+          icon: "partner5_sq",
+          alt: "Minecraft Experience Villager Rescue",
+        },
+        {
+          url: "https://legend-of-titanic.com/",
+          icon: "partner6_sq",
+          alt: "The Legend Of The Titanic",
+        },
+        {
+          url: "https://f1exhibition.com/",
+          icon: "partner4_sq",
+          alt: "Formula 1 The Exhibition",
+        },
       ];
 
       fetch("staff.json")
@@ -130,7 +169,7 @@
                 (s) =>
                   `<a href="${s.url}" target="_blank" rel="noopener noreferrer">
               <img src="${images[s.icon]}" alt="${s.alt}" />
-            </a>`
+            </a>`,
               )
               .join("");
 
@@ -140,16 +179,25 @@
                 (p) =>
                   `<a href="${p.url}" target="_blank" rel="noopener noreferrer">
                     <img src="${images[p.icon]}" alt="${p.alt}" />
-                  </a>`
+                  </a>`,
               )
               .join("");
 
             const signature = `
             <div class="signature">
               <div class="info">         
-                <div class="name">${person.name}</div>
+
+                
+<div>
+  <span class="name">${person.name}</span>
+  ${
+    person.pronouns ? ` <span class="pronouns">(${person.pronouns})</span>` : ""
+  }
+</div>
+
+
                 <div class="title">${person.title}</div>
-                                <div class="company">FKP Scorpio Entertainment Ltd</div>    
+                <div class="company">FKP Scorpio Entertainment Ltd</div>    
                <div class="contact"><strong>E: </strong><a href="mailto:${person.email}">${person.email}</a></div>        
                 <div class="contact"><strong>M: </strong>${person.phone}</div>
                 <div class="contact"><strong>W: </strong><a href="https://fkpscorpioentertainment.com/">fkpscorpioentertainment.com</div>  
@@ -161,7 +209,7 @@
                 </table>
               </div>
                 <div class="logo">
-                  <img src="${images.logo_with_strapline}" alt="FKP Scorpio Entertainment Logo" />
+                  <img src="${images.logo_2}" alt="FKP Scorpio Entertainment Logo" />
                 </div>                       
                  <div style="margin-bottom: 10px;">
                 <table width="350" cellpadding="0" cellspacing="0" border="0">
