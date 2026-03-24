@@ -23,23 +23,19 @@
         max-width: 600px;
       }
       .logo img {
-        max-height: 50px;
+        max-height: 56px;
         margin-top: 0rem;
       }
       .info {
         flex-grow: 1;
       }
       .name {
-        font-size: 1.1rem;
         font-weight: bold;
         margin-bottom: 0.1rem;
       }
       .title {
-        font-size: 0.3;
         margin-bottom: 0.2rem;
-        margin-top: 0.2rem;
-        text-transform: uppercase;
-        letter-spacing: 0.04rem;
+        margin-top: 0.1rem;
       }
       .company {
         font-weight: bold;
@@ -131,11 +127,30 @@
           alt: "Cleopatra The Experience",
         },
         {
+          url: "https://fkpscorpioentertainment.com/events/detail/the-last-days-of-pompeii-the-immersive-exhibition/",
+          icon: "partner1_sq",
+          alt: "The Last Days of Pompeii",
+        },
+        {
           url: "https://tutankhamunexperience.com/",
           icon: "partner7_sq",
           alt: "Tutankhamun The Immersive Exhibtion",
         },
-       
+        {
+          url: "https://www.minecraftexperience.com/denmark/",
+          icon: "partner5_sq",
+          alt: "Minecraft Experience Villager Rescue",
+        },
+        {
+          url: "https://legend-of-titanic.com/",
+          icon: "partner6_sq",
+          alt: "The Legend Of The Titanic",
+        },
+        {
+          url: "https://f1exhibition.com/",
+          icon: "partner4_sq",
+          alt: "Formula 1 The Exhibition",
+        },
       ];
 
       fetch("staff.json")
@@ -184,24 +199,10 @@
                 <div class="contact"><strong>M: </strong>${person.phone}</div>
                 <div class="contact"><strong>W: </strong><a href="https://fkpscorpioentertainment.com/">fkpscorpioentertainment.com</div>  
               <div style="margin-top: 10px;">
-                <table width="350" cellpadding="0" cellspacing="0" border="0">
-                  <tr>
-                    <td style="border-top:1px solid #ccc; height:1px; line-height:1px;">&nbsp;</td>
-                  </tr>
-                </table>
               </div>
                 <div class="logo">
-                  <img src="${images.logo_with_strapline}" alt="FKP Scorpio Entertainment Logo" />
+                  <img src="/images/FKP_SIGNATURE_COLOUR_300px.png" alt="FKP Scorpio Entertainment Logo" />
                 </div>                       
-                 <div style="margin-bottom: 10px;">
-                <table width="350" cellpadding="0" cellspacing="0" border="0">
-                  <tr>
-                    <td style="border-top:1px solid #ccc; height:1px; line-height:1px;">&nbsp;</td>
-                  </tr>
-                </table>
-              </div>
-                <div class="partners">${partnersHTML}</div>
-              </div>
             </div>
           `;
 

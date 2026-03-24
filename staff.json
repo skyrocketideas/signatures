@@ -1,9 +1,42 @@
 [
+     {
+    "name": "James Cassidy",
+    "title": "President",
+    "phone": "xxxxxx",
+    "email": "james.cassidy@fkpscorpio.co.uk"
+  }, 
   {
     "name": "Barry Campbell",
     "title": "Special Projects Director & Senior Promoter",
     "phone": "xxxxxx",
     "email": "barry.campbell@fkpscorpio.co.uk"
+  }, 
+  {
+    "name": "Neeshat Wadhud",
+    "pronouns": "she/her",
+    "title": "Head Of Marketing",
+    "phone": "xxxxxx",
+    "email": "neeshat.wadhud@fkpscorpio.co.uk"
+  },
+  {
+    "name": "Suzy Bryant",
+    "pronouns": "she/her",
+    "title": "Marketing Manager",
+    "phone": "xxxxxx",
+    "email": "suzy.bryant@fkpscorpio.co.uk"
+  },
+  {
+    "name": "Daisy Parry",
+    "pronouns": "she/her",
+    "title": "Special Projects Coordinator",
+    "phone": "xxxxxx",
+    "email": "daisy.parry@fkpscorpio.co.uk"
+  },
+  {
+    "name": "Emma Siegfried",
+    "pronouns": "she/her",
+    "title": "Customer Services & Social Media Assistant",
+    "phone": "xxxxxx",
+    "email": "emma.siegfried@fkpscorpio.co.uk"
   }
-
 ]
