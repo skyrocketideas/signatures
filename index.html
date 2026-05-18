@@ -3,92 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Email Signatures 3.0</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        font-size: 12px;
-        background: #f4f4f4;
-        padding: 2rem;
-      }
-      .signature {
-        display: flex;
-        gap: 1rem;
-        background: #fff;
-        padding: 1rem;
-        margin-bottom: 2rem;
-        border-left: 4px solid #004080;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        align-items: center;
-        max-width: 600px;
-      }
-      .logo img {
-        max-height: 50px;
-        margin-top: 0rem;
-      }
-      .info {
-        flex-grow: 1;
-      }
-      .name {
-        font-size: 1.1rem;
-        font-weight: bold;
-        margin-bottom: 0.1rem;
-      }
-      .title {
-        font-size: 0.3;
-        margin-bottom: 0.2rem;
-        margin-top: 0.2rem;
-        text-transform: uppercase;
-        letter-spacing: 0.04rem;
-      }
-      .company {
-        font-weight: bold;
-        margin-bottom: 0.2rem;
-      }
-      .contact {
-        margin-bottom: 0rem;
-      }
-      .partners img {
-        height: 65px;
-        vertical-align: middle;
-      }
-      .pronouns {
-        color: #555;
-        margin-bottom: 0.2rem;
-        font-style: italic;
-      }
-      .socials {
-        margin-top: 0.3rem;
-        margin-bottom: 0.2rem;
-      }
-      .socials a {
-        margin-left: 0;
-        margin-right: 0.5rem;
-        display: inline-block;
-      }
-      .socials img {
-        height: 20px;
-        vertical-align: middle;
-      }
-      .strapline {
-        font-style: italic;
-        margin-bottom: 0.2rem;
-      }
-      a {
-        color: #004080;
-        text-decoration: none;
-      }
-    </style>
+    <title>Email Signatures 5.0</title>
   </head>
-  <body>
-    <h1>FKPE Email Signatures</h1>
+
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      background-color: #f4f4f4;
+      padding: 32px;
+      margin: 0;
+    "
+  >
+    <h1
+      style="
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+        color: #000000;
+      "
+    >
+      FKP Scorpio Entertainment Signatures
+    </h1>
+
     <div id="signatures">Loading...</div>
 
-    <!-- Load images.js first -->
+    <!-- Load images.js -->
     <script src="images.js"></script>
 
     <script>
-      // Company-wide social media links/icons (icon keys match images.js keys)
+      // =========================================================
+      // SOCIAL MEDIA
+      // =========================================================
+
       const companySocials = [
         {
           url: "https://www.linkedin.com/company/awesome-company",
@@ -111,107 +58,409 @@
           alt: "Instagram",
         },
         {
-          url: "https://instagram.com/awesomecompany",
+          url: "https://youtube.com",
           icon: "youtube",
-          alt: "Youtube",
+          alt: "YouTube",
         },
       ];
 
-      // Company partner logos
+      // =========================================================
+      // PARTNER DEFINITIONS
+      // =========================================================
 
-      const companyPartners = [
-        {
+      const partnerDefinitions = {
+        partner1_sq: {
+          url: "https://fkpscorpioentertainment.com/events/detail/tutankhamun-the-immersive-exhibition/",
+          alt: "Tutankhamun The Immersive Exhibition",
+        },
+
+        partner2_sq: {
           url: "https://fkpscorpioentertainment.com/events/detail/vikings-the-immersive-experience/",
-          icon: "partner2_sq",
           alt: "Vikings The Immersive Experience",
         },
-        {
+
+        partner3_sq: {
           url: "https://fkpscorpioentertainment.com/events/detail/cleopatra-the-experience/",
-          icon: "partner3_sq",
           alt: "Cleopatra The Immersive Experience",
         },
-               {
-          url: "https://fkpscorpioentertainment.com/events/detail/tutankhamun-the-immersive-exhibition/",
-          icon: "partner7_sq",
-          alt: "Tutankhamun The Immersive Exhibitiomn",
-        },  
-      ];
+
+        partner4_sq: {
+          url: "https://www.minecraftexperience.com",
+          alt: "Minecraft Experience Villager Rescue",
+        },
+      };
+
+      // =========================================================
+      // LOAD STAFF JSON
+      // =========================================================
 
       fetch("staff.json")
         .then((res) => res.json())
         .then((staffList) => {
           const container = document.getElementById("signatures");
+
           container.innerHTML = "";
 
           staffList.forEach((person) => {
-            // Build company social icons HTML (same for all)
-            const socialsHTML = companySocials
-              .map(
-                (s) =>
-                  `<a href="${s.url}" target="_blank" rel="noopener noreferrer">
-              <img src="${images[s.icon]}" alt="${s.alt}" />
-            </a>`,
-              )
+            // =====================================================
+            // PARTNER LOGOS
+            // =====================================================
+
+            const partnersHTML = (person.partners || [])
+              .map((partnerKey) => {
+                const partner = partnerDefinitions[partnerKey];
+
+                if (!partner || !images[partnerKey]) return "";
+
+                return `
+<td style="padding-right:6px;">
+
+  <a
+    href="${partner.url}"
+    target="_blank"
+    rel="noopener noreferrer"
+    style="text-decoration:none;"
+  >
+
+    <img
+      src="${images[partnerKey]}"
+      alt="${partner.alt}"
+      width="65"
+      height="65"
+      style="
+        display:block;
+        width:65px;
+        height:65px;
+        border:0;
+        -ms-interpolation-mode:bicubic;
+      "
+    />
+
+  </a>
+
+</td>
+`;
+              })
               .join("");
 
-            // Build partners HTML
-            const partnersHTML = companyPartners
-              .map(
-                (p) =>
-                  `<a href="${p.url}" target="_blank" rel="noopener noreferrer">
-                    <img src="${images[p.icon]}" alt="${p.alt}" />
-                  </a>`,
-              )
-              .join("");
+            // =====================================================
+            // SIGNATURE HTML
+            // =====================================================
 
             const signature = `
-            <div class="signature">
-              <div class="info">         
+              
+<table
+  cellpadding="0"
+  cellspacing="0"
+  border="0"
+  width="600"
+  style="
+    width:600px;
+    background-color:#ffffff;
+    margin-bottom:24px;
+    border-collapse:collapse;
+    mso-table-lspace:0pt;
+    mso-table-rspace:0pt;
+    font-family:Arial,sans-serif;
+  "
+>
 
-                
-<div>
-  <span class="name">${person.name}</span>
-  ${
-    person.pronouns ? ` <span class="pronouns">(${person.pronouns})</span>` : ""
-  }
-</div>
+  <tr>
 
+    <td
+      valign="top"
+      style="
+        padding:20px;
+        font-family:Arial,sans-serif;
+        font-size:12px;
+        line-height:16px;
+        color:#000000;
+      "
+    >
 
-                <div class="title">${person.title}</div>
-                <div class="company">FKP Scorpio Entertainment Ltd</div>    
-               <div class="contact"><strong>E: </strong><a href="mailto:${person.email}">${person.email}</a></div>        
-                <div class="contact"><strong>M: </strong>${person.phone}</div>
-                <div class="contact"><strong>W: </strong><a href="https://fkpscorpioentertainment.com/">fkpscorpioentertainment.com</div>  
-              <div style="margin-top: 10px;">
-                <table width="350" cellpadding="0" cellspacing="0" border="0">
-                  <tr>
-                    <td style="border-top:1px solid #ccc; height:1px; line-height:1px;">&nbsp;</td>
-                  </tr>
-                </table>
-              </div>
-                <div class="logo">
-                  <img src="${images.logo_with_strapline}" alt="FKP Scorpio Entertainment Logo" />
-                </div>                       
-                 <div style="margin-bottom: 10px;">
-                <table width="350" cellpadding="0" cellspacing="0" border="0">
-                  <tr>
-                    <td style="border-top:1px solid #ccc; height:1px; line-height:1px;">&nbsp;</td>
-                  </tr>
-                </table>
-              </div>
-                <div class="partners">${partnersHTML}</div>
-              </div>
-            </div>
-          `;
+      <!-- NAME -->
+      <table
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+        style="
+          border-collapse:collapse;
+          mso-table-lspace:0pt;
+          mso-table-rspace:0pt;
+        "
+      >
+        <tr>
+          <td
+            style="
+              font-size:18px;
+              font-weight:bold;
+              line-height:20px;
+              color:#000000;
+              padding-bottom:2px;
+            "
+          >
+            ${person.name}
+
+            ${
+              person.pronouns
+                ? `
+              <span
+                style="
+                  font-style:italic;
+                  font-weight:normal;
+                  font-size:12px;
+                  color:#666666;
+                "
+              >
+                (${person.pronouns})
+              </span>
+            `
+                : ""
+            }
+
+          </td>
+        </tr>
+      </table>
+
+      <!-- TITLE -->
+      <table
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+        style="
+          border-collapse:collapse;
+          mso-table-lspace:0pt;
+          mso-table-rspace:0pt;
+        "
+      >
+        <tr>
+          <td
+            style="
+              font-size:11px;
+              text-transform:uppercase;
+              letter-spacing:0.5px;
+              color:#444444;
+              line-height:14px;
+            "
+          >
+            ${person.title}
+          </td>
+        </tr>
+      </table>
+
+      <!-- COMPANY -->
+      <table
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+        style="
+          border-collapse:collapse;
+          mso-table-lspace:0pt;
+          mso-table-rspace:0pt;
+        "
+      >
+        <tr>
+          <td
+            style="
+              font-weight:bold;
+              color:#000000;
+              padding-bottom:4px;
+            "
+          >
+            FKP Scorpio Entertainment Ltd
+          </td>
+        </tr>
+      </table>
+
+      <!-- EMAIL -->
+      <table
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+        style="
+          border-collapse:collapse;
+          mso-table-lspace:0pt;
+          mso-table-rspace:0pt;
+        "
+      >
+        <tr>
+          <td style="line-height:16px;">
+            <strong>E:</strong>
+            <a
+              href="mailto:${person.email}"
+              style="
+                color:#004080;
+                text-decoration:none;
+              "
+            >
+              ${person.email}
+            </a>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="line-height:16px;">
+            <strong>M:</strong> ${person.phone}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding-bottom:10px; line-height:16px;">
+            <strong>W:</strong>
+            <a
+              href="https://fkpscorpioentertainment.com/"
+              style="
+                color:#004080;
+                text-decoration:none;
+              "
+            >
+              fkpscorpioentertainment.com
+            </a>
+          </td>
+        </tr>
+      </table>
+
+      <!-- DIVIDER -->
+      <table
+        width="350"
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+        style="
+          border-collapse:collapse;
+          mso-table-lspace:0pt;
+          mso-table-rspace:0pt;
+        "
+      >
+        <tr>
+          <td
+            style="
+              border-top:1px solid #cccccc;
+              font-size:1px;
+              line-height:1px;
+              height:1px;
+            "
+          >
+          </td>
+        </tr>
+      </table>
+      <!-- MAIN LOGO -->
+      <table
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+        style="
+          border-collapse:collapse;
+          mso-table-lspace:0pt;
+          mso-table-rspace:0pt;
+        "
+      >
+        <tr>
+          <td">
+            <img
+              src="${images.logo_with_strapline}"
+              alt="FKP Scorpio Entertainment Logo"
+              width="275"
+              height="50"
+              style="
+                display:block;
+                width:275px;
+                height:50px;
+                border:0;
+                -ms-interpolation-mode:bicubic;
+              "
+            />
+
+          </td>
+        </tr>
+      </table>
+
+      ${
+        partnersHTML
+          ? `
+      
+      <!-- DIVIDER -->
+      <table
+        width="350"
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+        style="
+          border-collapse:collapse;
+          mso-table-lspace:0pt;
+          mso-table-rspace:0pt;
+        "
+      >
+        <tr>
+          <td
+            style="
+              border-top:1px solid #cccccc;
+              font-size:1px;
+              line-height:1px;
+              height:1px;
+            "
+          >
+            &nbsp;
+          </td>
+        </tr>
+
+        <tr>
+          <td style="height:10px; line-height:10px; font-size:10px;">
+            &nbsp;
+          </td>
+        </tr>
+      </table>
+
+      <!-- PARTNER LOGOS -->
+      <table
+        cellpadding="0"
+        cellspacing="0"
+        border="0"
+        style="
+          border-collapse:collapse;
+          mso-table-lspace:0pt;
+          mso-table-rspace:0pt;
+        "
+      >
+        <tr>
+
+          ${partnersHTML}
+
+        </tr>
+
+        <tr>
+          <td
+            colspan="10"
+            style="height:12px; line-height:12px; font-size:12px;"
+          >
+            &nbsp;
+          </td>
+        </tr>
+      </table>
+
+      `
+          : ""
+      }
+
+     
+
+    </td>
+
+  </tr>
+
+</table>
+`;
 
             container.innerHTML += signature;
           });
         })
         .catch((err) => {
           console.error(err);
+
           document.getElementById("signatures").innerText =
             "Failed to load staff data.";
         });
     </script>
   </body>
 </html>
+```
