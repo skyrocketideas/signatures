@@ -4,14 +4,14 @@
     "title": "President",
     "phone": "xxxxxx",
     "email": "james.cassidy@fkpscorpio.co.uk",
-    "partners": ["partner1_sq", "partner2_sq", "partner3_sq", "partner4_sq"]
+    "partners": ["partner1_sq", "partner2_sq", "partner3_sq"]
   }, 
   {
     "name": "Barry Campbell",
     "title": "Special Projects Director & Senior Promoter",
     "phone": "xxxxxx",
     "email": "barry.campbell@fkpscorpio.co.uk",
-    "partners": ["partner1_sq", "partner2_sq", "partner3_sq", "partner4_sq"]
+    "partners": ["partner1_sq", "partner2_sq", "partner3_sq"]
   }, 
   {
     "name": "Neeshat Wadhud",
@@ -28,7 +28,7 @@
     "title": "Marketing Manager",
     "phone": "xxxxxx",
     "email": "suzy.bryant@fkpscorpio.co.uk",
-    "partners": ["partner1_sq", "partner2_sq", "partner3_sq", "partner4_sq"]
+    "partners": ["partner1_sq", "partner2_sq"]
   },
   {
     "name": "Daisy Parry",
@@ -36,7 +36,7 @@
     "title": "Special Projects Coordinator",
     "phone": "xxxxxx",
     "email": "daisy.parry@fkpscorpio.co.uk",
-    "partners": ["partner1_sq", "partner2_sq", "partner3_sq", "partner4_sq"]
+    "partners": ["partner1_sq", "partner2_sq"]
   },
   {
     "name": "Emma Siegfried",
@@ -44,6 +44,6 @@
     "title": "Customer Services & Social Media Assistant",
     "phone": "xxxxxx",
     "email": "emma.siegfried@fkpscorpio.co.uk",
-    "partners": ["partner1_sq", "partner2_sq", "partner3_sq", "partner4_sq"]
+    "partners": ["partner1_sq", "partner2_sq"]
   }
 ]
